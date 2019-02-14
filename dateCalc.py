@@ -58,9 +58,24 @@ def dateBetween(date1='1904 8 22',date2='1997/002/019'):
     dateNumber = datesInSec/3600/24
     return dateNumber
 
+
+def dateAdd(date1="1904 8 22",date2=33784,template=r"%Y-%m-%d"):
+    '''
+    input 1 date string and 1 int
+    return date string
+    '''
+    d1 = strToTime(date1)
+    d2 = date2 * 24 * 3600
+
+    temp = str(template).strip()
+
+    dateTuple = time.localtime(d1+d2)
+    result = time.strftime(temp,dateTuple)
+
+    return result
+
 if __name__ == '__main__':
     '''
-
     print(strToTime())
     # -2062656000.0
     print(strToTime('1904.08 22'))
@@ -71,7 +86,20 @@ if __name__ == '__main__':
     print(dateBetween())
     # 755
     print(dateBetween('2017-1-20',"2019 2 14 10 05"))
+
+    # 2019-02-14
+    print(dateAdd("2017 1 20",755))
+    # 2017 1 20
+    print(dateAdd("2019 2 14",-755))
+    # 2017 Jan 20
+    print(dateAdd("2019 2 14",-755,r"%Y %b %d"))
+    # 2019 Feb 3, Sunday
+    print(dateAdd("2019 2 4",-1,r"%Y %b %d, %A"))
+
+
+
     '''
+
     init_loop()
 
     while True:
@@ -105,6 +133,7 @@ if __name__ == '__main__':
                 exit()
             else:
                 init_loop()
+
 
             
             
