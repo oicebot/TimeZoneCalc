@@ -10,8 +10,8 @@ def init_loop():
     dateStr = ''
 
 def strToTime(inStr='1904-08-22'):
-    inStr=inStr.strip()
-    result =[]
+    inStr = inStr.strip()
+    result = []
     temp = ''
     if not inStr[0].isdigit():
         return None
@@ -58,7 +58,6 @@ def dateBetween(date1='1904 8 22',date2='1997/002/019'):
     dateNumber = datesInSec/3600/24
     return dateNumber
 
-
 def dateAdd(date1="1904 8 22",date2=33784,template=r"%Y-%m-%d"):
     '''
     input 1 date string and 1 int
@@ -95,8 +94,6 @@ if __name__ == '__main__':
     print(dateAdd("2019 2 14",-755,r"%Y %b %d"))
     # 2019 Feb 3, Sunday
     print(dateAdd("2019 2 4",-1,r"%Y %b %d, %A"))
-
-
 
     '''
 
