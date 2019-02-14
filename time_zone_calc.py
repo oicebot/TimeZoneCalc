@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 
 try:
@@ -11,7 +11,11 @@ try:
 except ImportError:
     import tk.ttk as ttk
     
-import pygubu
+try:
+    import pygubu
+except:
+    print("Please Install pygubu before use this app.")
+    exit()
 
 """
 """
